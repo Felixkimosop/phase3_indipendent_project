@@ -150,6 +150,11 @@ div:hover {
   cursor: pointer;
   transition: all 0.4s ease;
 }
+.mech {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
 
 .header {
   align-items: center;

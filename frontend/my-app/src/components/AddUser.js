@@ -1,11 +1,23 @@
 import React, { useState } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function AddUser({ id }) {
-  const [user, setUser] = useState("");
-  const [name, setName] = useState();
+  const [user, setUser] = useState([]);
+  const [name, setName] = useState("");
 
-  function handleUser(e) {}
+  function handleUser(e) {
+    e.preventDefault();
+    setUser([...user, name]);
+    setName("");
+
+    fetch("/users", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name }),
+    })
+      .then((r) => r.json())
+      .then(document.location.reload());
+  }
 
   return (
     <div>
@@ -17,7 +29,7 @@ function AddUser({ id }) {
                 Name
               </label>
               <input
-                onChange={(e) => setUser(e.target.value)}
+                onChange={(e) => setName(e.target.value)}
                 type="text"
                 class="form-control"
                 placeholder="Enter names"
@@ -26,6 +38,14 @@ function AddUser({ id }) {
               />
 
               <input class="btn btn-primary btn1" type="submit" required />
+              <Link
+                to={`/available/${id}/name/comment`}
+                class="btn btn-primary btn1"
+                type="next"
+              >
+                {" "}
+                next
+              </Link>
             </div>
           </div>
         </div>

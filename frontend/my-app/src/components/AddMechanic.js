@@ -47,14 +47,11 @@ function AddMechanic({ mechanic, setMechanic }) {
             <div class="card-header card2">Add A Mechanic</div>
             <div class="card-body">
               <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">
-                  Mechanic Name
-                </label>
+                <label class="form-label">Mechanic Name</label>
                 <input
                   onChange={(e) => setName(e.target.value)}
                   type="text"
                   class="form-control"
-                  id="exampleFormControlInput1"
                   placeholder="Enter Name"
                   value={name}
                 />
@@ -109,7 +106,7 @@ function AddMechanic({ mechanic, setMechanic }) {
                 </label>
                 <input
                   onChange={(e) => setImage_url(e.target.value)}
-                  type="text"
+                  type="file"
                   class="form-control"
                   id="exampleFormControlInput1"
                   placeholder="https://bit.ly/3y5kzRX"

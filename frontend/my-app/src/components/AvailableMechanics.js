@@ -14,7 +14,7 @@ function AvailableMechanics({ mechanic }) {
   }
 
   return (
-    <div>
+    <div className="mech">
       {Array.isArray(mechanic)
         ? mechanic.map((mech, index) => {
             return (
