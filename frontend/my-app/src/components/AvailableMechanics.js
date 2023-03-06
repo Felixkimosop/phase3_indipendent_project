@@ -13,6 +13,8 @@ function AvailableMechanics({ mechanic }) {
       .then(document.location.reload());
   }
 
+  console.log(mechanic);
+
   return (
     <div className="mech">
       {Array.isArray(mechanic)
@@ -21,6 +23,7 @@ function AvailableMechanics({ mechanic }) {
               <div className="card" key={index}>
                 <img src={mech.image_url} className="card-img-top" alt="..." />
                 <div className="card-body">
+                  <h3>Mechanic No {mech.id}</h3>
                   <h5 className="card-title">{mech.name}</h5>
                   <p className="card-text">{mech.age}</p>
                   <p className="card-text">{mech.expertise}</p>
@@ -30,10 +33,18 @@ function AvailableMechanics({ mechanic }) {
 
                   <hr />
 
-                  {mech.reviews &&
+                  {mech.users &&
                     mech.reviews.map((rev) => {
-                      return <p>{rev.review}</p>;
+                      return (
+                        <div>
+                          <p>
+                            {rev.name}:{rev.review}
+                          </p>
+                          <hr />
+                        </div>
+                      );
                     })}
+                  <hr />
                   {/* <hr />
                   {mech.users &&
                     mech.users.map((rev) => {

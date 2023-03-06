@@ -14,11 +14,10 @@ function LandingPage() {
           <div className="landing rightie">
             <h1 className="words">My Mechanic</h1>
             <p className="words2">
-              Lorem ipsum dolor sit amet. Ea fugit odit ut internos quis rem
-              pariatur adipisci et nemo iure ea minima nesciunt ad magnam
-              beatae! Aut fugit blanditiis qui consequatur sapiente sit aliquid
-              magnam et nesciunt enim aut totam consequatur At dolore dicta nam
-              ipsam officiis.
+              "Get the best roadside assistance and car repair services at your
+              fingertips with our innovative mechanic app that connects you with
+              trusted mechanics near you. Don't let car troubles slow you down -
+              download now and get back on the road with ease!"
             </p>
           </div>
         </div>

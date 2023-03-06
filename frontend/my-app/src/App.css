@@ -70,7 +70,7 @@ div:hover {
   height: fit-content;
   margin-left: 10px;
   transition: transform 0.2s ease-in-out;
-  border-radius: 5px;
+  border-radius: 10px;
   margin-bottom: 50px;
 }
 
@@ -154,6 +154,9 @@ div:hover {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 30px;
+}
+.form-s {
+  margin-top: 20px;
 }
 
 .header {

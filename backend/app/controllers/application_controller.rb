@@ -18,6 +18,7 @@ class ApplicationController < Sinatra::Base
             age: params[:age],
             expertise: params[:expertise],
             location: params[:location],
+            image_url: params[:image_url],
             tel: params[:tel]
         )
         mechanic.save()
@@ -44,7 +45,7 @@ class ApplicationController < Sinatra::Base
 
     get "/reviews" do
         review = Review.all
-        review.to_json
+        review.to_json(include: [:mechanic, :user])
     end
 
     get "/reviews/:id" do

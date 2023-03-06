@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import ViewDetails from "./components/ViewDetails";
 import AddComment from "./components/AddComment";
 import AddUser from "./components/AddUser";
+import MechanicSearch from "./components/ MechanicSearch";
 
 function App() {
   const [mechanic, setMechanic] = useState();
@@ -34,7 +35,8 @@ function App() {
 
   return (
     <div>
-      <Navbar />
+      <Navbar mechanic={mechanic} />
+      <MechanicSearch />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route

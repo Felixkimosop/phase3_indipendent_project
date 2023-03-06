@@ -17,6 +17,13 @@ function ViewDetails() {
   } else {
     console.log("error: missing");
   }
+  const comments = Array.isArray(mechanics.reviews)
+    ? mechanics.reviews.map((element) => {
+        return <p>{element.review}</p>;
+      })
+    : null;
+
+  console.log(mechanics);
 
   return (
     <div>
@@ -27,12 +34,7 @@ function ViewDetails() {
       <p>{mechanics.location}</p>
 
       <h3>comments</h3>
-      {Array.isArray(mechanics.reviews)
-        ? mechanics.reviews.map((element) => {
-            return <p>{element.review}</p>;
-          })
-        : null}
-
+      {comments}
       <Link to={`/available/${mechanics.id}/name`}>
         <button className="btn btn-primary btn1">Comment</button>
       </Link>
