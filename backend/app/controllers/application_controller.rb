@@ -86,7 +86,7 @@ end
 
 get "/users" do
     user = User.all
-    user.to_json
+    user.to_json(include: :reviews)
 end
 
 get "/users/:id" do
@@ -105,20 +105,23 @@ post "/users" do
 end
 
 patch "/users/:id" do
-    review = User.find_by(id: params[:id])
+    user = User.find_by(id: params[:id])
 
-    review = User.update(
-        name: params[:name]
+    user = User.update(
+        name: params[:name],
+        
     )
 
-    review.to_json
+    user.to_json
 
    end
 
    delete "/users/:id" do
-    mechanic = User.find_by(id: params[:id])
-    mechanic.destroy
-end
+    user = User.find_by(id: params[:id])
+
+    user.destroy
+    
+   end
 
 
    
